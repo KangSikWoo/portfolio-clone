@@ -14,12 +14,19 @@ categories.addEventListener('click', (event) => {
     return;
   }
 
+  handleActiveSelection(event.target);
+  filterProjects(filter);
+});
+
+function handleActiveSelection(target) {
   // Active 메뉴를 재설정
   const active = document.querySelector('.category__selected');
   //classList에 어떤 함수를 쓸 때는 클래스명만 입력
   active.classList.remove('category__selected');
-  event.target.classList.add('category__selected');
+  target.classList.add('category__selected');
+}
 
+function filterProjects(filter) {
   projectsContainer.classList.add('anim-out');
   // 프로젝트 필터링
   projects.forEach((project) => {
@@ -32,4 +39,4 @@ categories.addEventListener('click', (event) => {
   setTimeout(() => {
     projectsContainer.classList.remove('anim-out');
   }, 250);
-});
+}
