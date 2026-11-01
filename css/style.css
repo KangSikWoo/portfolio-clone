@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 스크롤이 부드럽게 되게 해줌. */
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
