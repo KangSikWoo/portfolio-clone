@@ -25,7 +25,10 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <!-- JS -->
     <!-- defer : js파일이 다운로드 될 때까지 안 기다려도 됨. 성능 좋아짐. -->
-    <script src="src/main.js" defer></script>
+    <!-- module화를 안하면 한 파일에서 선언한 변수가 글로벌 변수처럼 됨. -->
+    <!-- 충돌이 발생할 수 있으므로 독립적인 파일로 만들기 위해 module로 사용. -->
+    <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="src/projects.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -178,32 +181,32 @@
           <p class="description">Projects</p>
           <ul class="categories">
             <li>
-              <button class="category category__selected">
+              <button class="category category__selected" data-category="all">
                 All
                 <span class="category__count">8</span>
               </button>
             </li>
             <li>
-              <button class="category">
+              <button class="category" data-category="front-end">
                 Front-end
                 <span class="category__count">3</span>
               </button>
             </li>
             <li>
-              <button class="category">
+              <button class="category" data-category="design">
                 Design
                 <span class="category__count">3</span>
               </button>
             </li>
             <li>
-              <button class="category">
+              <button class="category" data-category="ai">
                 AI utilize
                 <span class="category__count">2</span>
               </button>
             </li>
           </ul>
           <ul class="projects">
-            <li class="project">
+            <li class="project" data-type="front-end">
               <!-- target:"_blank" : 새 창에서 열게 해줌 -->
               <a href="#" target="_blank">
                 <img src="projects/project1.webp" alt="project1" class="project__img" />
@@ -213,7 +216,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="front-end">
               <a href="#" target="_blank">
                 <img src="projects/project2.webp" alt="project2" class="project__img" />
                 <div class="project__metadata">
@@ -222,7 +225,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="front-end">
               <a href="#" target="_blank">
                 <img src="projects/project3.webp" alt="project3" class="project__img" />
                 <div class="project__metadata">
@@ -231,7 +234,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="design">
               <a href="#" target="_blank">
                 <img src="projects/project4.webp" alt="project4" class="project__img" />
                 <div class="project__metadata">
@@ -240,7 +243,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="design">
               <a href="#" target="_blank">
                 <img src="projects/project5.webp" alt="project5" class="project__img" />
                 <div class="project__metadata">
@@ -249,7 +252,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="design">
               <a href="#" target="_blank">
                 <img src="projects/project6.webp" alt="project6" class="project__img" />
                 <div class="project__metadata">
@@ -258,7 +261,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="ai">
               <a href="#" target="_blank">
                 <img src="projects/project7.webp" alt="project7" class="project__img" />
                 <div class="project__metadata">
@@ -267,7 +270,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="ai">
               <a href="#" target="_blank">
                 <img src="projects/project8.webp" alt="project8" class="project__img" />
                 <div class="project__metadata">
